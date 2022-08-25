@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import InputUser from "./components/Input";
+import {useState} from "react";
+import "bootstrap/dist/css/bootstrap.min.css"
+
+
 
 function App() {
+  const [userName, setUserName]= useState('')
+  const [userPassword, setPassword]=useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <InputUser user={userName} setUser={setUserName} setPassword={setPassword} password={userPassword} />
     </div>
   );
 }
